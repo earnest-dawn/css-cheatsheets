@@ -1,0 +1,107 @@
+:root {
+  --col-1: #e866ec;
+  --col-2: white;
+  --col-3: #9a1563;
+}
+
+h1 {
+  color: var(--col-3);
+font-size: 50px;
+}
+
+h2 {
+  color: var(--col-3);
+ font-size: x-large;
+}
+
+h3 {
+  color: var(--col-2);
+  font-size: medium;
+}
+
+h4 {
+  font-size: large;
+    color: var(--col-1);
+
+}
+
+body {
+ background-color: #33393f;
+}
+
+header {
+  
+  text-align: center;
+  width: 100%;
+
+}
+
+.card-column {
+  flex: 1 0 100%;
+  padding: 1.5rem;
+  /* when the screen resizes, make it so our columns don't jump in size */
+  transition: flex-basis 500ms linear;
+  margin-bottom: 1.5rem;
+}
+
+.card-div {
+display: flex;
+flex-direction: row;
+ flex-wrap: wrap;
+
+}
+
+.card-section {
+width: 300px;
+min-height: 100%;
+    border: var(--col-2) 3px solid;
+margin: 5px; 
+}
+
+.card-section > p {
+  white-space: pre-wrap;
+  overflow: auto;
+  tab-size: 4;
+  padding: 1.2rem 1rem;
+  color: var(--col-2);
+  border-radius: 8px;
+  /* use linear-gradient() function to create a fading background  */
+  background-image: linear-gradient(
+    rgba(232, 102, 236, 0.3) 0%,
+    rgba(232, 102, 236, 0.6) 100%
+  );
+  display: flex;
+  align-items: center;
+
+}
+
+.card-section > h2 {
+      border-bottom: var(--col-2) 3px solid;
+background-color: grey;
+} 
+
+@media screen and (min-width: 768px) {
+  /* on tablets, set columns to only be 50% of the width and not grow */
+  .card-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+/* background-color: aqua; */
+  }
+
+  /* select the last child to grow to full width if it has space to grow */
+  /* .card-column:last-child { */
+    /* flex-grow: 1; */
+  }
+/* } */
+
+/* media query for larger screens */
+@media screen and (min-width: 992px) {
+  header {
+    width: 75%;
+  }
+
+  .card-column {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
